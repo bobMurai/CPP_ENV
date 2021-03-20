@@ -9,8 +9,12 @@ int main(){
 
     vector<int> a(N);
 
-    for(int i = 0; i < N; ++i) cin >> a[i];
+    int count = 0;
+    for(int i = 0; i < N; ++i){
+        cin >> a[i];
+        if (a[i] == v) ++count;
+    }
 
-    cout << "Hello! World!" << endl;
+    cout << count << endl;
     return 0;
 }
