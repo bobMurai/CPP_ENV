@@ -1,6 +1,9 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
+
+vector<long long> memo;
 
 int tribo(int n)
 {
@@ -12,12 +15,18 @@ int tribo(int n)
     {
         return 1;
     }
-    return tribo(n - 1) + tribo(n - 2) + tribo(n - 3);
+
+    if(memo[n] == -1){
+        memo[n] = tribo(n - 1) + tribo(n - 2) + tribo(n - 3);
+    }
+
+    return memo[n];
 }
 
 int main()
 {
     int n;
     cin >> n;
+    memo.assign(n, -1);
     cout << tribo(n) << endl;
 }
