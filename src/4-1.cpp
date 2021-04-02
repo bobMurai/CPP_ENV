@@ -2,13 +2,6 @@
 
 using namespace std;
 
-int main()
-{
-    int n;
-    cin >> n;
-    cout << tribo(n) << endl;
-}
-
 int tribo(int n)
 {
     if (n == 0 || n == 1)
@@ -20,4 +13,11 @@ int tribo(int n)
         return 1;
     }
     return tribo(n - 1) + tribo(n - 2) + tribo(n - 3);
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    cout << tribo(n) << endl;
 }
